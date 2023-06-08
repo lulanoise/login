@@ -7,7 +7,6 @@ import com.develhope.login.auth.entities.LoginRTO;
 import com.develhope.login.users.entities.User;
 import com.develhope.login.users.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

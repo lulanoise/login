@@ -19,10 +19,10 @@ public class User {
     private LocalDateTime jwtCreatedOn; //jwt.io
     @Column(length = 36)
     private String activationCode;
-    @Column(length = 36)
-    private String PasswordResetCode;
+    @Column(name = "password_reset_code", length = 36)
+    private String passwordResetCode;
 
-    public User(Long id, String name, String surname, String email, String password, boolean isActive, LocalDateTime jwtCreatedOn, String activationCode, String passwordResetCode) {
+    public User(Long id, String name, String surname, String email, String password, boolean isActive, LocalDateTime jwtCreatedOn, String activationCode, String PasswordResetCode) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -31,7 +31,7 @@ public class User {
         this.isActive = isActive;
         this.jwtCreatedOn = jwtCreatedOn;
         this.activationCode = activationCode;
-        PasswordResetCode = passwordResetCode;
+        this.passwordResetCode = PasswordResetCode;
     }
 
     public User (){}
@@ -101,11 +101,11 @@ public class User {
     }
 
     public String getPasswordResetCode() {
-        return PasswordResetCode;
+        return passwordResetCode;
     }
 
     public void setPasswordResetCode(String passwordResetCode) {
-        PasswordResetCode = passwordResetCode;
+        this.passwordResetCode = passwordResetCode;
     }
 
     @Override
@@ -119,7 +119,7 @@ public class User {
                 ", isActive=" + isActive +
                 ", jwtCreatedOn=" + jwtCreatedOn +
                 ", activationCode='" + activationCode + '\'' +
-                ", PasswordResetCode='" + PasswordResetCode + '\'' +
+                ", PasswordResetCode='" + passwordResetCode + '\'' +
                 '}';
     }
 }
